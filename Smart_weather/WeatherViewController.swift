@@ -15,6 +15,7 @@ import NVActivityIndicatorView
 class WeatherViewController : UIViewController {
     
     var location: String = ""
+    var pic = ""
     
     @IBOutlet weak var celsiusLabel: UILabel!
     
@@ -91,7 +92,7 @@ extension WeatherViewController {
                     self.conditionImageView.image = UIImage(named: iconName)
                     self.conditionLabel.text = jsonWeather["main"].stringValue
                     self.temperatureLabel.text = "\(Int(round(jsonTemp["temp"].doubleValue)))"
-            
+                    self.pic = iconName
             
                     let date = Date()
                     let dateFormatter = DateFormatter()
@@ -107,5 +108,41 @@ extension WeatherViewController {
                 }
             }
         }
+    }
+}
+
+extension WeatherViewController {
+    
+    @IBAction func wardrobeButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "toWardrobe", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationController = segue.destination as? WardrobeViewController else { return }
+        guard let temperature = Int(temperatureLabel.text!) else { return }
+        var collector = ""
+        if temperature <= 0 {
+            collector = "Please wear: gloves, scarf, cap and down-bed."
+            if pic == "13d" || pic == "13n" {
+                collector = "Please wear: gloves, scarf, cap and down-bed. Don`t forget about scarf!"
+            }
+        } else if temperature > 0 && temperature <= 0 {
+            collector = "Please wear: jacket."
+            if pic == "11d" || pic == "11n" {
+                collector = "Please wear: jacket. Take raincoat or umbrella. Recomended to stay at home."
+            }
+            if pic == "09d" || pic == "09n" || pic == "10d" || pic == "10n" {
+                collector = "Please wear: jacket. Take raincoat or umbrella."
+            }
+        } else {
+            collector = "Please wear: t-shirt and shorts."
+            if pic == "09d" || pic == "09n" || pic == "10d" || pic == "10n" {
+                collector = "Please wear: t-shirt and shorts. Take raincoat or umbrella."
+            }
+            if pic == "11d" || pic == "11n" {
+                collector = "Please wear: t-shirt and shorts. Take raincoat or umbrella. Recomended to stay at home."
+            }
+        }
+        destinationController.result = collector
     }
 }

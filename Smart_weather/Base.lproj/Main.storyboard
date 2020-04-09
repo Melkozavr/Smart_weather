@@ -133,7 +133,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nPe-w9-C98"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hI0-od-5yF"/>
+                    <navigationItem key="navigationItem" id="hI0-od-5yF">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="xZy-rl-vIb">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zES-3w-jW5">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Wardrobe"/>
+                                <connections>
+                                    <action selector="wardrobeButton:" destination="Sru-HH-emT" eventType="touchUpInside" id="PJW-h5-ZAn"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <segue destination="KOk-ey-1pi" kind="show" identifier="toWardrobe" id="GvT-JJ-D8Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="backgroundView" destination="QcW-j2-BTq" id="nGe-KJ-oBm"/>
                         <outlet property="celsiusLabel" destination="GmA-yo-Isl" id="8Mn-Dn-Zje"/>
@@ -148,11 +163,61 @@
             </objects>
             <point key="canvasLocation" x="1907.2463768115942" y="138.58695652173915"/>
         </scene>
+        <!--Wardrobe View Controller-->
+        <scene sceneID="7VP-RN-5mp">
+            <objects>
+                <viewController id="KOk-ey-1pi" customClass="WardrobeViewController" customModule="Smart_weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KTw-Xo-fr5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCz-VU-Mcd">
+                                <rect key="frame" x="57" y="258.66666666666669" width="300" height="263.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="1dO-j2-Jy4"/>
+                                    <constraint firstAttribute="height" constant="263" id="UZk-0E-DTP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rCz-VU-Mcd" firstAttribute="centerX" secondItem="zSL-Yg-1yR" secondAttribute="centerX" id="Ako-mp-HH8"/>
+                            <constraint firstItem="rCz-VU-Mcd" firstAttribute="centerY" secondItem="zSL-Yg-1yR" secondAttribute="centerY" id="ac4-mz-fFO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zSL-Yg-1yR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hKm-7h-JX4">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="rks-S0-PSB">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gax-K4-ecZ">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Exit"/>
+                                <connections>
+                                    <action selector="exitButton:" destination="KOk-ey-1pi" eventType="touchUpInside" id="eU0-wt-jpd"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <segue destination="mQ0-xz-aze" kind="show" identifier="toExit" id="f4f-wP-EWz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="wearLabel" destination="rCz-VU-Mcd" id="UCA-dq-Oui"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hhM-s5-GVw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2702.898550724638" y="138.58695652173915"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="91c-Eb-bgk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mQ0-xz-aze" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="nVc-7s-i8a"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CSN-BA-FRy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		CEC0AE0C243F2927007EBC5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC0AE0B243F2927007EBC5B /* Assets.xcassets */; };
 		CEC0AE0F243F2927007EBC5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC0AE0D243F2927007EBC5B /* LaunchScreen.storyboard */; };
 		CEC0AE17243F2F9B007EBC5B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0AE16243F2F9B007EBC5B /* WeatherViewController.swift */; };
+		CEC0AE19243F9AEE007EBC5B /* WardrobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0AE18243F9AEE007EBC5B /* WardrobeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CEC0AE0E243F2927007EBC5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEC0AE10243F2927007EBC5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC0AE16243F2F9B007EBC5B /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		CEC0AE18243F9AEE007EBC5B /* WardrobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +52,6 @@
 				5C79F5DBE4009A727C5DF4E5 /* Pods-Smart_weather.debug.xcconfig */,
 				275922B95BDB9A1FABE6B35E /* Pods-Smart_weather.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -86,6 +87,7 @@
 				CEC0AE02243F2922007EBC5B /* AppDelegate.swift */,
 				CEC0AE04243F2922007EBC5B /* SceneDelegate.swift */,
 				CEC0AE06243F2922007EBC5B /* ViewController.swift */,
+				CEC0AE18243F9AEE007EBC5B /* WardrobeViewController.swift */,
 				CEC0AE16243F2F9B007EBC5B /* WeatherViewController.swift */,
 				CEC0AE08243F2922007EBC5B /* Main.storyboard */,
 				CEC0AE0B243F2927007EBC5B /* Assets.xcassets */,
@@ -211,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC0AE07243F2922007EBC5B /* ViewController.swift in Sources */,
+				CEC0AE19243F9AEE007EBC5B /* WardrobeViewController.swift in Sources */,
 				CEC0AE17243F2F9B007EBC5B /* WeatherViewController.swift in Sources */,
 				CEC0AE03243F2922007EBC5B /* AppDelegate.swift in Sources */,
 				CEC0AE05243F2922007EBC5B /* SceneDelegate.swift in Sources */,
